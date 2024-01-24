@@ -49,7 +49,6 @@ table {
     font-family: akira;
     src: url(assets/akira-font.otf);
   }
-
 :root {
     font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
     box-sizing: border-box;
@@ -57,10 +56,68 @@ table {
     background-color: black;
     --primary-color: hsl(10, 70%, 50%);
 }
+body {
+    display: flex;
+}
+a {
+    font-weight: bold;
+    color: var(--primary-color);
+}
 /*global*/
 
-/*left*/
-.left-section > img{
+/*left section*/
+.left-section {
+    justify-content: center;
+    display: flex;
     height: 100vh;
+    overflow: hidden;
+    display: flex;
+    min-width: 250px;
+    align-items: center;
+    position: relative;
 }
-/*left*/
+.logo-container {
+    justify-content: center;
+    position: absolute;
+    display: flex;
+    align-items: center;
+    background-color: hsla(0, 0%, 0%, 0.4);
+    width: 100%;
+    padding: 20px;
+    font-size: clamp(2.5rem,4vw, 5rem);
+    color: var(--primary-color);
+    font-family: akira, sans-serif;
+}
+.logo-container>img{
+    width: clamp(4rem,6vw, 5rem);
+}
+.left-section>img {
+    height: 100%;
+}
+.left-section>p {
+    position: absolute;
+    align-self: flex-end;
+    margin-bottom: 20px;
+}
+/*left section*/
+
+/*mobile*/
+@media (max-width: 500px) {
+    body {
+        flex-direction: column;
+    }
+    .left-section {
+        max-height: 150px;
+    }
+    .left-section>img{
+        height: auto;
+        width: 100%;
+    }
+    .left-section>p{
+        font-size: 0.8rem;
+    }
+    .logo-container{
+        height: 100%;
+    }
+}
+/*mobile*/
