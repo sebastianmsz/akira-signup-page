@@ -50,7 +50,7 @@ table {
     src: url(assets/akira-font.otf);
   }
 :root {
-    font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";;
+    font-family: system-ui, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';;
     box-sizing: border-box;
     color: var(--secondary-color);
     background-color: var(--ternary-color);
@@ -123,7 +123,7 @@ button{
 .message {
     display: flex;
     flex-direction: column;
-    gap: 40px;
+    gap: 30px;
 }
 fieldset {
     display: flex;
@@ -139,15 +139,29 @@ fieldset>div{
     justify-content: space-evenly;
     gap: 20px;
     width: 50%;
+    min-height: 100px;
 }
 fieldset>div>div{
     display: flex;
     flex-direction: column;
 }
 legend {
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
-label{
+legend p{
+    margin-top: 6px;
+    font-size: 0.9rem;
+}
+legend p::before,
+form label::before{
+    content: '* ';
+    color: var(--primary-color);
+    font-weight: bold;
+}
+label[for='phoneNumber']::before {
+    content: '';
+}
+form label{
     margin-bottom: 3px;
     font-size: 0.7rem;
 }
@@ -167,6 +181,14 @@ button {
     border-radius: 8px;
     cursor: pointer;
 }
+
+input:focus{
+    outline: none;
+    border: 1px solid var(--primary-color);
+}
+input:focus::placeholder {
+    color: transparent;
+  }
 /*right section*/
 
 
