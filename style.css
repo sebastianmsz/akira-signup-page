@@ -181,6 +181,12 @@ button {
     border-radius: 8px;
     cursor: pointer;
 }
+button:hover{
+    filter: brightness(90%);
+}
+button:active{
+    filter: brightness(60%);
+}
 
 input:focus{
     outline: none;
@@ -189,6 +195,22 @@ input:focus{
 input:focus::placeholder {
     color: transparent;
   }
+::-ms-reveal {
+  filter: invert(60%);
+}
+.formLeft{
+    margin-bottom: 10px;
+}
+span {
+    height: 10px;
+    visibility: hidden;
+}
+.confirmPassword::after{
+    content: 'Passwords don\'t  match *';
+    font-size: 0.7rem;
+    color: red;
+}
+
 /*right section*/
 
 
